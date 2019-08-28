@@ -4,5 +4,9 @@ collections:
   pages:
     output: true
     permalink: /:name
+exclude:
+  - "Gemfile*"
+  - "README.txt"
+  - "redirects.json"
 plugins:
   - jekyll-redirect-from
