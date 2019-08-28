@@ -1,9 +1,56 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    {{ content }}
-  </body>
+<head>
+  <title>{{ page.title }} | Esther Rowena Louise Music</title>
+  <link rel="stylesheet" href="/assets/css/default.css" />
+  <link rel="stylesheet" href="/assets/css{{page.id}}.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo" />
+  <!-- <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+
+  <div class="site-main-container">
+
+    <div class="title-bar-container">
+      <div class="title-bar-overlay">
+
+        <div class="title-text-container">
+          <span class="light-blue">Esther</span>
+          <span class="light-blue">Rowena</span>
+          <span class="light-blue">Louise</span>
+          <span class="dark-blue">Music</span>
+        </div>
+
+        <div id="nav-container">
+            <div class="nav-item-container">
+                <a class="nav-item-text" href="/about">About My Brand</a>
+            </div>
+            <div class="nav-item-container">
+                <a class="nav-item-text" href="/performance">Performance Packages</a>
+            </div>
+            <div class="nav-item-container">
+                <a class="nav-item-text" href="/gallery">Gallery</a>
+            </div>
+            <div class="nav-item-container">
+                <a class="nav-item-text" href="/contact">Connect</a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="content-container">{{ content }}</div>
+
+    <div class="footer-container">
+      <span>Website design &copy; 2019 <a href="https://www.linkedin.com/in/jack-robinson-771545150">Jack Robinson</a>;</span>
+      <span>Social media icons by <a href="https://dribbble.com/sebastiano_guerriero">Sebastiano Guerriero</a></span>
+    </div>
+
+  </div>
+
+</body>
 </html>

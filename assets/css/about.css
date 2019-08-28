@@ -1,0 +1,49 @@
+.about-image {
+    border-radius: 8px;
+    object-fit: cover;
+    height: 200px;
+    width: 130px;
+    transition: width .5s;
+    transition: margin .5s;
+}
+
+/****************************\
+|*      MOBILE - LARGE      *|
+\****************************/
+@media ( min-width: 450px ) {
+    
+}
+
+/*****************************\
+|*     TABLET - PORTRAIT     *|
+\*****************************/
+@media ( min-width: 570px ) {
+    .about-image {
+        width: 360px;
+        object-position: 0px -100px;
+    }
+}
+
+/******************************\
+|*     TABLET - LANDSCAPE     *|
+\******************************/
+@media ( min-width: 640px ) {
+    
+}
+
+@media ( min-width: 800px ) {
+    
+}
+
+@media ( min-width: 1000px ) {
+    .about-image {
+        margin: 28px;
+    }
+}
+
+/*******************************\
+|*           DESKTOP           *|
+\*******************************/
+@media ( min-width: 1400px ) {
+    
+}

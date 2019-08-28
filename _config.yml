@@ -1,2 +1,8 @@
-name: Esther Rowena Louise Music
+title: Esther Rowena Louise Music
 markdown: kramdown
+collections:
+  pages:
+    output: true
+    permalink: /:name
+plugins:
+  - jekyll-redirect-from

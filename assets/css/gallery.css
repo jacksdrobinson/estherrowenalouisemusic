@@ -1,0 +1,98 @@
+/* Thanks to https://codepen.io/lassediercks/pen/VMqMBm for the square grid */
+.gallery-video-grid {
+    width: 100%;
+    --content-width: 80vw;
+    max-width: var(--content-width);
+    box-sizing: border-box;
+    padding: 16px;
+    
+    display: grid;
+    --gutter: 40px;
+    --columns: 1;
+
+    --row-size: calc(
+        ( var(--content-width) - (var(--gutter) * (var(--columns) - 1))
+        ) / var(--columns)
+    );
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-auto-rows: var(--row-size);
+    grid-column-gap: var(--gutter);
+    grid-row-gap: var(--gutter);
+}
+
+.gallery-video-frame {
+    grid-column: auto / span 1;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-audio-grid {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+
+    display: grid;
+    --gutter: 40px;
+    --columns: 1;
+
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-auto-rows: 180px;
+    grid-column-gap: var(--gutter);
+    grid-row-gap: var(--gutter);
+}
+
+.gallery-audio-frame {
+    grid-column: auto / span 1;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-album-frame {
+    width: 100%;
+    height: 80vh;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+/****************************\
+|*      MOBILE - LARGE      *|
+\****************************/
+@media ( min-width: 450px ) {
+    
+}
+
+/*****************************\
+|*     TABLET - PORTRAIT     *|
+\*****************************/
+@media ( min-width: 570px ) {
+    
+}
+
+/******************************\
+|*     TABLET - LANDSCAPE     *|
+\******************************/
+@media ( min-width: 640px ) {
+    
+}
+
+@media ( min-width: 800px ) {
+    .gallery-video-grid {
+        --columns: 2;
+    }
+}
+
+@media ( min-width: 1000px ) {
+    
+}
+
+/*******************************\
+|*           DESKTOP           *|
+\*******************************/
+@media ( min-width: 1400px ) {
+    .gallery-video-grid {
+        --columns: 3;
+    }
+    .gallery-audio-grid {
+        --columns: 2;
+    }
+}

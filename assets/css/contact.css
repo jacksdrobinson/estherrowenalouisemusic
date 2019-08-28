@@ -1,0 +1,93 @@
+.contact-grid {
+    margin: 12px;
+    display: grid;
+    --columns: 1;
+    grid-template-columns: repeat(var(--columns),1fr);
+}
+
+.contact-item {
+    margin: 6px;
+    height: 64px;
+    grid-column: auto / span 1;
+    border-radius: 12px;
+    box-shadow: 3px 3px #ccc;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: var(--button-background-color);
+    text-decoration: none;
+}
+
+.contact-item-icon {
+    margin: 10px;
+    width: 44px;
+    flex: 0 0 auto;
+}
+
+.contact-item-icon-image {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-item-text {
+    padding: 0px 12px;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    color: var(--subtle-grey);
+}
+
+/* SOCIAL MEDIA ICON COLOURS */
+/* Thanks to https://www.lockedownseo.com/social-media-colors/ */
+#soundcloudIcon path {
+    fill: #ff5500;
+}
+
+#instagramIcon path {
+    fill: #c32aa3;
+}
+
+#facebookIcon path {
+    fill: #1877f2;
+}
+
+/****************************\
+|*      MOBILE - LARGE      *|
+\****************************/
+@media ( min-width: 450px ) {
+    
+}
+
+/*****************************\
+|*     TABLET - PORTRAIT     *|
+\*****************************/
+@media ( min-width: 570px ) {
+    
+}
+
+/******************************\
+|*     TABLET - LANDSCAPE     *|
+\******************************/
+@media ( min-width: 640px ) {
+    
+}
+
+@media ( min-width: 800px ) {
+    
+}
+
+@media ( min-width: 1000px ) {
+    .contact-grid {
+        --columns: 2;
+    }
+}
+
+/*******************************\
+|*           DESKTOP           *|
+\*******************************/
+@media ( min-width: 1400px ) {
+    
+}

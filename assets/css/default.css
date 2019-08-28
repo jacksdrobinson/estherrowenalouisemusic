@@ -1,0 +1,369 @@
+/**********************************\
+|*                                *|
+|*   STYLE FOR DEFAULT TEMPLATE   *|
+|*                                *|
+\**********************************/
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+:root{
+    --title-font: Satisfy;
+    --body-font: Arimo;
+    --accent-dark-blue: #184ea5;
+    --accent-light-blue: #2164d1;
+    --subtle-grey: #5770a8;
+    --background-color: #f7fdff;
+    --button-background-color: #eef;
+}
+
+/****************************\
+|*          MOBILE          *|
+\****************************/
+.site-main-container {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+}
+
+/* -- Title Bar -- */
+.title-bar-container {
+    width: 100%;
+    height: 180px;
+    box-sizing: border-box;
+    transition: height .5s;
+    
+    background-image: url("/assets/images/background-shards.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.title-bar-overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    background-color: rgba(255,255,255,.8);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-text-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-text-container span {
+    text-transform: uppercase;
+    font-family: var(--title-font);
+    font-size: 22px;
+    padding: 3px;
+    transition-property: font-size, padding;
+    transition-duration: .5s;
+}
+
+.title-text-container .dark-blue {
+    color: var(--accent-dark-blue);
+}
+
+.title-text-container .light-blue {
+    color: var(--accent-light-blue);
+}
+
+/* -- Nav Bar -- */
+#nav-container {
+    height: 64px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: calc(100% - 64px);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-item-container {
+    cursor: pointer;
+    padding: 5px;
+    /* This makes the gaps between them look weird. Need solution. */
+    width: calc(100% / 4 - 10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width .5s;
+}
+
+.nav-item-container:hover {
+    color: yellow;
+}
+
+.nav-item-text {
+    font-family: var(--body-font);
+    font-size: 16px;
+    text-align: center;
+    transition: font-size .5s;
+}
+
+.nav-item-text-active {
+    color: #2164d1;
+}
+
+/* -- Main Body -- */
+#content-container {
+    flex: 1 0 200px;
+    font-family: var(--body-font);
+    width: 100%;
+    margin: 0;
+}
+
+/* -- Footer -- */
+.footer-container {
+    height: 30px;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 10px;
+    font-family: var(--body-font);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.footer-container span {
+    margin-right: 5px;
+}
+
+/****************************\
+|*      MOBILE - LARGE      *|
+\****************************/
+@media ( min-width: 450px ) {
+
+    .title-text-container span {
+        font-size: 28px;
+        padding: 5px;
+    }
+
+    .nav-item-text {
+        font-size: 18px;
+    }
+}
+
+/*****************************\
+|*     TABLET - PORTRAIT     *|
+\*****************************/
+@media ( min-width: 570px ) {
+
+    .title-text-container span {
+        font-size: 40px;
+        padding: 7px;
+    }
+
+    .nav-item-text {
+        font-size: 20px;
+    }
+
+    /*.nav-item-container {
+        width: unset;
+    }*/
+}
+
+/******************************\
+|*     TABLET - LANDSCAPE     *|
+\******************************/
+@media ( min-width: 640px ) {
+
+    #content-container {
+        width: 640px;
+        margin: auto;
+    }
+}
+
+@media ( min-width: 800px ) {
+
+    #content-container {
+        width: 80%;
+    }
+}
+
+@media ( min-width: 1000px ) {
+    .nav-item-container {
+        width: max-content;
+    }
+}
+
+/*******************************\
+|*           DESKTOP           *|
+\*******************************/
+@media ( min-width: 1400px ) {
+
+    .title-bar-container {
+        height: 200px;
+    }
+    
+    .title-text-container span {
+        font-size: 54px;
+        padding: 8px;
+    }
+
+    .nav-item-text {
+        font-size: 24px;
+    }
+
+    #content-container {
+        width: 1120px;
+    }
+}
+
+
+
+/*********************************\
+|*                               *|
+|*   STYLE COMMON TO ALL PAGES   *|
+|*                               *|
+\*********************************/
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.page-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-header {
+    font-family: var(--title-font);
+    font-size: 32px;
+    margin: 30px 0px 0px 0px;
+    transition: font-size .5s;
+    transition: margin .5s;
+}
+
+.page-subheader {
+    font-family: var(--title-font);
+    font-size: 24px;
+    margin: 12px 0px 0px 0px;
+    transition: font-size .5s;
+    transition: margin .5s;
+}
+
+.page-text {
+    padding: 0px 20px;
+    font-size: 16px;
+}
+
+.page-text p {
+    font-family: var(--body-font);
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    transition: font-size .5s;
+}
+
+.page-text p:first-child {
+    color: var(--accent-dark-blue);
+    font-size: 18px;
+}
+
+/****************************\
+|*      MOBILE - LARGE      *|
+\****************************/
+@media ( min-width: 450px ) {
+    .page-header {
+        font-size: 34px;
+    }
+    .page-text {
+        font-size: 18px;
+    }
+    .page-text p:first-child {
+        font-size: 20px;
+    }
+}
+
+/*****************************\
+|*     TABLET - PORTRAIT     *|
+\*****************************/
+@media ( min-width: 570px ) {
+    .page-header {
+        font-size: 36px;
+    }
+    .page-text {
+        font-size: 20px;
+    }
+    .page-text p:first-child {
+        font-size: 22px;
+    }
+}
+
+/******************************\
+|*     TABLET - LANDSCAPE     *|
+\******************************/
+@media ( min-width: 640px ) {
+    .page-header {
+        font-size: 38px;
+    }
+    .page-text {
+        font-size: 22px;
+    }
+    .page-text p:first-child {
+        font-size: 24px;
+    }
+}
+
+@media ( min-width: 800px ) {
+    .page-header {
+        font-size: 40px;
+    }
+    .page-text {
+        font-size: 24px;
+    }
+    .page-text p:first-child {
+        font-size: 26px;
+    }
+}
+
+@media ( min-width: 1000px ) {
+    .page-header {
+        font-size: 42px;
+        margin-top: 54px;
+    }
+    .page-text {
+        font-size: 26px;
+    }
+    .page-text p:first-child {
+        font-size: 28px;
+    }
+}
+
+/*******************************\
+|*           DESKTOP           *|
+\*******************************/
+@media ( min-width: 1400px ) {
+    .page-header {
+        font-size: 44px;
+    }
+    .page-text {
+        font-size: 28px;
+    }
+    .page-text p:first-child {
+        font-size: 30px;
+    }
+}
