@@ -108,7 +108,7 @@ html, body {
 }
 
 .nav-item-container:hover {
-    color: yellow;
+    color: var(--accent-light-blue);
 }
 
 .nav-item-text {
