@@ -37,8 +37,7 @@ html, body {
     height: 180px;
     box-sizing: border-box;
     transition: height .5s;
-    
-    background-image: url("/assets/images/background-shards.png");
+
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
