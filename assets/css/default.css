@@ -114,9 +114,10 @@ html, body {
 .nav-item-text {
     font-family: var(--body-font);
     font-size: 16px;
+    transition: font-size .5s;
     text-align: center;
     text-decoration: none;
-    transition: font-size .5s;
+    color: inherit;
 }
 
 .nav-item-text-active {
