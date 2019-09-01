@@ -11,8 +11,8 @@ html, body {
 }
 
 :root{
-    --title-font: Satisfy;
-    --body-font: Arimo;
+    --title-font: Satisfy, serif;
+    --body-font: Nunito, sans-serif;
     --accent-dark-blue: #184ea5;
     --accent-light-blue: #2164d1;
     --subtle-grey: #5770a8;
