@@ -1,5 +1,6 @@
 title: Esther Rowena Louise Music
 markdown: kramdown
+baseurl: /estherrowenalouisemusic
 collections:
   pages:
     output: true
