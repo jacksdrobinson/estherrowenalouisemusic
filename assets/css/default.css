@@ -46,21 +46,20 @@ html, body {
 }
 
 .title-bar-overlay {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
-
     background-color: rgba(255,255,255,.8);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .title-text-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
 }
@@ -69,7 +68,7 @@ html, body {
     text-transform: uppercase;
     font-family: var(--title-font);
     font-size: 22px;
-    padding: 3px;
+    padding: 0px 6px;
     transition-property: font-size, padding;
     transition-duration: .5s;
 }
@@ -83,27 +82,34 @@ html, body {
 }
 
 /* -- Nav Bar -- */
-#nav-container {
-    height: 64px;
-    width: 100%;
+.nav-positioning-box {
     position: absolute;
+    top: 0px;
     left: 0px;
-    top: calc(100% - 64px);
-
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.nav-container {
+    height: 32px;
+    flex: 0 0 auto;
+    margin-bottom: 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .nav-item-container {
     cursor: pointer;
-    padding: 5px;
-    /* This makes the gaps between them look weird. Need solution. */
-    width: calc(100% / 4 - 10px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     transition: width .5s;
 }
 
@@ -113,7 +119,7 @@ html, body {
 
 .nav-item-text {
     font-family: var(--body-font);
-    font-size: 16px;
+    font-size: 10px;
     transition: font-size .5s;
     text-align: center;
     text-decoration: none;
@@ -122,6 +128,15 @@ html, body {
 
 .nav-item-text-active {
     color: #2164d1;
+}
+
+.nav-dot {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
 }
 
 /* -- Main Body -- */
@@ -158,31 +173,25 @@ html, body {
 
     .title-text-container span {
         font-size: 28px;
-        padding: 5px;
     }
 
     .nav-item-text {
-        font-size: 18px;
+        font-size: 12px;
     }
 }
 
 /*****************************\
 |*     TABLET - PORTRAIT     *|
 \*****************************/
-@media ( min-width: 570px ) {
+@media ( min-width: 560px ) {
 
     .title-text-container span {
         font-size: 40px;
-        padding: 7px;
     }
 
     .nav-item-text {
-        font-size: 20px;
+        font-size: 16px;
     }
-
-    /*.nav-item-container {
-        width: unset;
-    }*/
 }
 
 /******************************\
@@ -190,13 +199,25 @@ html, body {
 \******************************/
 @media ( min-width: 640px ) {
 
+    .title-text-container span {
+        font-size: 44px;
+    }
+
     #content-container {
         width: 640px;
         margin: auto;
     }
+
+    .nav-item-text {
+        font-size: 20px;
+    }
 }
 
 @media ( min-width: 800px ) {
+
+    .title-text-container span {
+        font-size: 48px;
+    }
 
     #content-container {
         width: 80%;
@@ -204,6 +225,11 @@ html, body {
 }
 
 @media ( min-width: 1000px ) {
+
+    .title-text-container span {
+        font-size: 52px;
+    }
+
     .nav-item-container {
         width: max-content;
     }
@@ -220,7 +246,6 @@ html, body {
     
     .title-text-container span {
         font-size: 54px;
-        padding: 8px;
     }
 
     .nav-item-text {
