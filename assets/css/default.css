@@ -20,6 +20,32 @@ html, body {
     --button-background-color: #eef;
 }
 
+/* -- Flexbox shortcuts -- */
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.fill {
+    min-height: 0px;
+    min-width: 0px;
+    flex: 1 1 0;
+}
+
+.hold {
+    flex: 0 0 auto;
+}
+
 /****************************\
 |*          MOBILE          *|
 \****************************/
@@ -34,8 +60,7 @@ html, body {
 /* -- Title Bar -- */
 .title-bar-container {
     width: 100%;
-    height: 180px;
-    box-sizing: border-box;
+    height: 80px;
     transition: height .5s;
 
     background-repeat: no-repeat;
@@ -46,22 +71,13 @@ html, body {
 }
 
 .title-bar-overlay {
-    position: relative;
     width: 100%;
     height: 100%;
     background-color: rgba(255,255,255,.8);
 }
 
 .title-text-container {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 .title-text-container span {
@@ -81,34 +97,12 @@ html, body {
 }
 
 /* -- Nav Bar -- */
-.nav-positioning-box {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
-}
-
 .nav-container {
-    height: 32px;
-    flex: 0 0 auto;
-    margin-bottom: 12px;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: stretch;
-    justify-content: center;
+
 }
 
 .nav-item-container {
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transition: width .5s;
 }
 
@@ -131,10 +125,6 @@ html, body {
 
 .nav-dot {
     padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: 36px;
 }
 
@@ -170,6 +160,10 @@ html, body {
 \****************************/
 @media ( min-width: 450px ) {
 
+    .title-bar-container {
+        height: 100px;
+    }
+
     .title-text-container span {
         font-size: 28px;
     }
@@ -183,6 +177,10 @@ html, body {
 |*     TABLET - PORTRAIT     *|
 \*****************************/
 @media ( min-width: 560px ) {
+
+    .title-bar-container {
+        height: 140px;
+    }
 
     .title-text-container span {
         font-size: 40px;
