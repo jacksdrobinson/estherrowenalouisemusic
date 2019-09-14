@@ -31,7 +31,12 @@
 |*     TABLET - LANDSCAPE     *|
 \******************************/
 @media ( min-width: 640px ) {
-    
+    .about-section {
+        grid-template-areas:
+            "header header"
+            "image  text-accent"
+            "text   text";
+    }
 }
 
 @media ( min-width: 800px ) {
