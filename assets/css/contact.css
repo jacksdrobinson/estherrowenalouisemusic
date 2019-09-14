@@ -6,7 +6,7 @@
 }
 
 .contact-grid {
-    margin: 12px;
+    justify-self: stretch;
     display: grid;
     --columns: 1;
     grid-template-columns: repeat(var(--columns),1fr);

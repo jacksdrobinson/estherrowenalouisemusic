@@ -132,8 +132,7 @@ html, body {
 #content-container {
     flex: 1 0 200px;
     font-family: var(--body-font);
-    width: 100%;
-    margin: 0;
+    padding: 0px 8px;
 }
 
 /* -- Footer -- */
@@ -268,10 +267,15 @@ html, body {
     align-items: stretch;
 }
 
+.page-container > div {
+    margin-top: 16px;
+}
+
 .page-container p {
     margin: 0;
 }
 
+/* -- Grid shortcuts -- */
 .grid {
     display: grid;
     justify-items: center;
@@ -302,6 +306,7 @@ html, body {
     grid-area: content;
 }
 
+/* -- Styling shortcuts -- */
 .page-header {
     grid-area: header;
     font-family: var(--title-font);
