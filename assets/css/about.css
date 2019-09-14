@@ -1,10 +1,16 @@
+.about-section {
+    grid-template-areas:
+        "header"
+        "image"
+        "text-accent"
+        "text";
+}
+
 .about-image {
     border-radius: 8px;
     object-fit: cover;
     height: 200px;
     width: 130px;
-    transition: width .5s;
-    transition: margin .5s;
 }
 
 /****************************\
@@ -18,10 +24,7 @@
 |*     TABLET - PORTRAIT     *|
 \*****************************/
 @media ( min-width: 570px ) {
-    .about-image {
-        width: 360px;
-        object-position: 0px -100px;
-    }
+
 }
 
 /******************************\

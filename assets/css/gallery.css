@@ -1,3 +1,10 @@
+.gallery-section {
+    grid-template-areas:
+        "header"
+        "text-accent"
+        "content";
+}
+
 /* Thanks to https://codepen.io/lassediercks/pen/VMqMBm for the square grid */
 .gallery-video-grid {
     width: 100%;

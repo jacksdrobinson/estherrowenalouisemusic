@@ -1,3 +1,10 @@
+.contact-section {
+    grid-template-areas:
+        "header"
+        "text-accent"
+        "content";
+}
+
 .contact-grid {
     margin: 12px;
     display: grid;

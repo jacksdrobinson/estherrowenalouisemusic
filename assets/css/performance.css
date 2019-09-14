@@ -1,3 +1,11 @@
+.performance-section {
+    grid-template-areas:
+        "header"
+        "text-accent"
+        "subheader"
+        "content";
+}
+
 .performance-genre-grid {
     width: 100%;
     box-sizing: border-box;
