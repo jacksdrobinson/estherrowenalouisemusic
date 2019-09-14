@@ -1,7 +1,7 @@
 .gallery-section {
     grid-template-areas:
         "header"
-        "text-accent"
+/*        "text-accent"*/
         "content";
 }
 
