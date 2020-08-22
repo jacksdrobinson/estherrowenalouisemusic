@@ -18,9 +18,9 @@ const titleBarContainer = document.getElementsByClassName("title-bar-container")
 
 function checkTitleBarScroll () {
     if ( titleBarSpacingBlock.getBoundingClientRect().bottom === titleBarContainer.getBoundingClientRect().bottom ) {
-        document.documentElement.removeAttribute("data-title-bar-minimized");
+        titleBarContainer.removeAttribute("data-title-bar-minimized");
     } else {
-        document.documentElement.dataset.titleBarMinimized = "";
+        titleBarContainer.dataset.titleBarMinimized = "";
     }
 }
 
