@@ -4,6 +4,10 @@
 |*                                *|
 \**********************************/
 
+html {
+    --scroll-position: attr(data-scroll);
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -55,13 +59,22 @@ html, body {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
+    --title-bar-min-height: 80px;
 }
 
 /* -- Title Bar -- */
+.title-bar-spacing-block {
+    height: max( calc( 100vh - var(--scroll-position)), var(--title-bar-min-height));
+}
+
 .title-bar-container {
+
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 80px;
-    transition: height .5s;
+    height: max( calc( 100vh - 2 * var(--scroll-position)), var(--title-bar-min-height));
+    /*transition: height .2s;*/
 
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -71,13 +84,23 @@ html, body {
 }
 
 .title-bar-overlay {
+
     width: 100%;
     height: 100%;
     background-color: rgba(255,255,255,.8);
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: .5fr auto .5fr;
+    grid-template-areas:
+        "blank"
+        "title"
+        "nav-bar";
 }
 
 .title-text-container {
-    
+    grid-area: title;
+    align-self: center;
 }
 
 .title-text-container span {
@@ -88,17 +111,17 @@ html, body {
     transition-duration: .5s;
 }
 
-.title-text-container .dark-blue {
-    color: var(--accent-dark-blue);
-}
-
 .title-text-container .light-blue {
     color: var(--accent-light-blue);
 }
 
+.title-text-container .dark-blue {
+    color: var(--accent-dark-blue);
+}
+
 /* -- Nav Bar -- */
 .nav-container {
-
+    grid-area: nav-bar;
 }
 
 .nav-item-container {
@@ -159,8 +182,8 @@ html, body {
 \****************************/
 @media ( min-width: 450px ) {
 
-    .title-bar-container {
-        height: 100px;
+    .site-main-container {
+        --title-bar-min-height: 100px;
     }
 
     .title-text-container span {
@@ -178,8 +201,8 @@ html, body {
 \*****************************/
 @media ( min-width: 560px ) {
 
-    .title-bar-container {
-        height: 140px;
+    .site-main-container {
+        --title-bar-min-height: 140px;
     }
 
     .title-text-container span {
@@ -237,10 +260,19 @@ html, body {
 \*******************************/
 @media ( min-width: 1400px ) {
 
-    .title-bar-container {
-        height: 200px;
+    .site-main-container {
+        --title-bar-min-height: 100px;
     }
-    
+
+    html[data-title-bar-minimized] .title-bar-overlay {
+        box-sizing: border-box;
+        padding: 16px;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title blank nav-bar";
+    }
+
     .title-text-container span {
         font-size: 54px;
     }
