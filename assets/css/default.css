@@ -154,7 +154,7 @@ html, body {
 }
 
 /* -- Main Body -- */
-#content-container {
+.content-container {
     flex: 1 0 200px;
     font-family: var(--body-font);
     padding: 0px 8px;
@@ -225,7 +225,7 @@ html, body {
         font-size: 44px;
     }
 
-    #content-container {
+    .content-container {
         width: 640px;
         margin: auto;
     }
@@ -241,7 +241,7 @@ html, body {
         font-size: 48px;
     }
 
-    #content-container {
+    .content-container {
         width: 80%;
     }
 }
@@ -279,7 +279,7 @@ html, body {
         font-size: 54px;
     }
 
-    #content-container {
+    .content-container {
         width: 1120px;
     }
 }
