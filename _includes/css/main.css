@@ -1,13 +1,8 @@
 /**********************************\
 |*                                *|
-|*   STYLE FOR DEFAULT TEMPLATE   *|
+|*         GENERIC STYLES         *|
 |*                                *|
 \**********************************/
-
-html {
-    --scroll-position: attr(data-scroll);
-}
-
 html, body {
     height: 100%;
     width: 100%;
@@ -22,6 +17,7 @@ html, body {
     --subtle-grey: #5770a8;
     --background-color: #f7fdff;
     --button-background-color: #eef;
+    --scroll-position: 0px;
 }
 
 /* -- Flexbox shortcuts -- */
@@ -50,9 +46,96 @@ html, body {
     flex: 0 0 auto;
 }
 
-/****************************\
-|*          MOBILE          *|
-\****************************/
+/* -- Grid shortcuts -- */
+.grid {
+    display: grid;
+    justify-items: center;
+    grid-gap: 16px;
+}
+
+.grid-header {
+    grid-area: header;
+}
+
+.grid-subheader {
+    grid-area: subheader;
+}
+
+.grid-image {
+    grid-area: image;
+}
+
+.grid-text-accent {
+    grid-area: text-accent;
+}
+
+.grid-text {
+    grid-area: text;
+}
+
+.grid-content {
+    grid-area: content;
+}
+
+/* -- Section styling -- */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.section-container > div {
+    margin-top: 16px;
+}
+
+.section-container p {
+    margin: 0;
+}
+
+.section-header {
+    grid-area: header;
+    font-family: var(--title-font);
+    font-size: 32px;
+    text-align: center;
+    transition: font-size .5s;
+}
+
+.section-subheader {
+    grid-area: subheader;
+    font-family: var(--title-font);
+    font-size: 24px;
+    text-align: center;
+    transition: font-size .5s;
+}
+
+.section-text-accent {
+    grid-area: text-accent;
+    color: var(--accent-dark-blue);
+    text-align: center;
+    margin-top: 0px;
+    font-size: 18px;
+    transition: font-size .5s;
+}
+
+.section-text {
+    grid-area: text;
+    font-family: var(--body-font);
+    text-align: center;
+    font-size: 16px;
+    transition: font-size .5s;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 16px;
+}
+
+
+
+
+/*********************************\
+|*                               *|
+|*         LAYOUT STYLES         *|
+|*                               *|
+\*********************************/
 .site-main-container {
     min-height: 100%;
     width: 100%;
@@ -179,22 +262,37 @@ html, body {
     margin-right: 5px;
 }
 
+
+
+
+/**********************************\
+|*                                *|
+|*       RESPONSIVE LAYOUTS       *|
+|*                                *|
+\**********************************/
+
 /****************************\
 |*      MOBILE - LARGE      *|
 \****************************/
 @media ( min-width: 450px ) {
-
     .site-main-container {
         --title-bar-min-height: 100px;
     }
-
     .title-text-container span {
         padding: 0px 6px;
         font-size: 30px;
     }
-
     .nav-item-text {
         font-size: 12px;
+    }
+    .section-header {
+        font-size: 34px;
+    }
+    .section-text-accent {
+        font-size: 20px;
+    }
+    .section-text {
+        font-size: 18px;
     }
 }
 
@@ -202,17 +300,23 @@ html, body {
 |*     TABLET - PORTRAIT     *|
 \*****************************/
 @media ( min-width: 560px ) {
-
     .site-main-container {
         --title-bar-min-height: 140px;
     }
-
     .title-text-container span {
         font-size: 40px;
     }
-
     .nav-item-text {
         font-size: 16px;
+    }
+    .section-header {
+        font-size: 36px;
+    }
+    .section-text-accent {
+        font-size: 22px;
+    }
+    .section-text {
+        font-size: 20px;
     }
 }
 
@@ -220,40 +324,66 @@ html, body {
 |*     TABLET - LANDSCAPE     *|
 \******************************/
 @media ( min-width: 640px ) {
-
     .title-text-container span {
         font-size: 44px;
     }
-
     .content-container {
         width: 640px;
         margin: auto;
     }
-
     .nav-item-text {
         font-size: 18px;
+    }
+    .section-header {
+        font-size: 38px;
+    }
+    .section-text-accent {
+        font-size: 24px;
+    }
+    .section-text {
+        font-size: 22px;
+    }
+    .subsection-container {
+        grid-template-areas:
+            "subsection-header   subsection-header"
+            "subsection-banner-a subsection-banner-b"
+            "subsection-content  subsection-content";
     }
 }
 
 @media ( min-width: 800px ) {
-
     .title-text-container span {
         font-size: 48px;
     }
-
     .content-container {
         width: 80%;
+    }
+    .section-header {
+        font-size: 40px;
+    }
+    .section-text-accent {
+        font-size: 26px;
+    }
+    .section-text {
+        font-size: 24px;
     }
 }
 
 @media ( min-width: 1000px ) {
-
     .title-text-container span {
         font-size: 52px;
     }
-
     .nav-item-container {
         width: max-content;
+    }
+    .section-header {
+        font-size: 42px;
+    }
+    .section-text-accent {
+        font-size: 28px;
+    }
+    .section-text {
+        font-size: 26px;
     }
 }
 
@@ -261,11 +391,9 @@ html, body {
 |*           DESKTOP           *|
 \*******************************/
 @media ( min-width: 1400px ) {
-
     .site-main-container {
         --title-bar-min-height: 100px;
     }
-
     .title-bar-container[data-title-bar-minimized] .title-bar-overlay {
         box-sizing: border-box;
         padding: 16px;
@@ -274,191 +402,19 @@ html, body {
         grid-template-areas:
             "title blank nav-bar";
     }
-
     .title-text-container span {
         font-size: 54px;
     }
-
     .content-container {
         width: 1120px;
     }
-}
-
-
-
-/*********************************\
-|*                               *|
-|*   STYLE COMMON TO ALL PAGES   *|
-|*                               *|
-\*********************************/
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.page-container > div {
-    margin-top: 16px;
-}
-
-.page-container p {
-    margin: 0;
-}
-
-/* -- Grid shortcuts -- */
-.grid {
-    display: grid;
-    justify-items: center;
-    grid-gap: 16px;
-}
-
-.grid-header {
-    grid-area: header;
-}
-
-.grid-subheader {
-    grid-area: subheader;
-}
-
-.grid-image {
-    grid-area: image;
-}
-
-.grid-text-accent {
-    grid-area: text-accent;
-}
-
-.grid-text {
-    grid-area: text;
-}
-
-.grid-content {
-    grid-area: content;
-}
-
-/* -- Styling shortcuts -- */
-.page-header {
-    grid-area: header;
-    font-family: var(--title-font);
-    font-size: 32px;
-    text-align: center;
-    transition: font-size .5s;
-}
-
-.page-subheader {
-    grid-area: subheader;
-    font-family: var(--title-font);
-    font-size: 24px;
-    text-align: center;
-    transition: font-size .5s;
-}
-
-.page-text-accent {
-    grid-area: text-accent;
-    color: var(--accent-dark-blue);
-    text-align: center;
-    margin-top: 0px;
-    font-size: 18px;
-    transition: font-size .5s;
-}
-
-.page-text {
-    grid-area: text;
-    font-family: var(--body-font);
-    text-align: center;
-    font-size: 16px;
-    transition: font-size .5s;
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 16px;
-}
-
-/****************************\
-|*      MOBILE - LARGE      *|
-\****************************/
-@media ( min-width: 450px ) {
-    .page-header {
-        font-size: 34px;
-    }
-    .page-text-accent {
-        font-size: 20px;
-    }
-    .page-text {
-        font-size: 18px;
-    }
-}
-
-/*****************************\
-|*     TABLET - PORTRAIT     *|
-\*****************************/
-@media ( min-width: 570px ) {
-    .page-header {
-        font-size: 36px;
-    }
-    .page-text-accent {
-        font-size: 22px;
-    }
-    .page-text {
-        font-size: 20px;
-    }
-}
-
-/******************************\
-|*     TABLET - LANDSCAPE     *|
-\******************************/
-@media ( min-width: 640px ) {
-    .page-section-container {
-        grid-template-areas:
-          "page-section-header   page-section-header"
-          "page-section-banner-a page-section-banner-b"
-          "page-section-content  page-section-content";
-    }
-    .page-header {
-        font-size: 38px;
-    }
-    .page-text-accent {
-        font-size: 24px;
-    }
-    .page-text {
-        font-size: 22px;
-    }
-}
-
-@media ( min-width: 800px ) {
-    .page-header {
-        font-size: 40px;
-    }
-    .page-text-accent {
-        font-size: 26px;
-    }
-    .page-text {
-        font-size: 24px;
-    }
-}
-
-@media ( min-width: 1000px ) {
-    .page-header {
-        font-size: 42px;
-    }
-    .page-text-accent {
-        font-size: 28px;
-    }
-    .page-text {
-        font-size: 26px;
-    }
-}
-
-/*******************************\
-|*           DESKTOP           *|
-\*******************************/
-@media ( min-width: 1400px ) {
-    .page-header {
+    .section-header {
         font-size: 44px;
     }
-    .page-text-accent {
+    .section-text-accent {
         font-size: 30px;
     }
-    .page-text {
+    .section-text {
         font-size: 28px;
     }
 }

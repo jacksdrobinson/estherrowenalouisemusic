@@ -2,9 +2,8 @@
 
 <html>
 <head>
-  <title>{{ page.title }} | Esther Rowena Louise Music</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/default.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css{{page.id}}.css" />
+  <title>Esther Rowena Louise Music</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Niconne" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito" />
@@ -45,7 +44,164 @@
       </div>
     </div>
 
-    <div class="content-container">{{ content }}</div>
+    <div class="content-container flex column">
+
+      <!------------------------------------------------------------------------------------------>
+      <!-- ABOUT SECTION                                                                        -->
+      <!------------------------------------------------------------------------------------------>
+      <div class="section-container">
+
+        <div class="about-section grid">
+          <span class="section-header">
+            Our History
+          </span>
+          <img src="{{ site.baseurl }}/assets/images/profile.jpg" class="grid-image about-image" />
+          <p class="section-text-accent">
+            Some words about history and stuff which can go over a line break in mobile view
+            and a bit more so that it'll go over a line in desktop view because it's really really
+            really really long
+          </p>
+          <div class="section-text">
+            <p>More words here</p>
+            <p>More words here</p>
+            <p>More words here</p>
+          </div>
+        </div>
+
+        <div class="about-section grid">
+          <span class="section-header">
+            Collaboration
+          </span>
+          <img src="{{ site.baseurl }}/assets/images/wales.jpg" class="grid-image about-image" />
+          <p class="section-text-accent">
+            Would you like to collaborate?
+          </p>
+          <div class="section-text">
+            <p>Call 0800 COLA BR8</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!------------------------------------------------------------------------------------------>
+      <!-- PERFORMANCE PACKAGES SECTION                                                         -->
+      <!------------------------------------------------------------------------------------------>
+      <div class="section-container">
+
+        <div class="grid performance-section">
+          <span class="section-header">
+            Performance Packages
+          </span>
+          <div class="section-text-accent">
+            <p>
+              Some words about what a performance package is and how to select one and
+              stuff which can go over a line break in mobile view and a bit more so that
+              it'll go over a line in desktop view because it's really really really really long
+            </p>
+          </div>
+          <span class="section-subheader">
+            Select Genre
+          </span>
+          <div class="grid-content performance-genre-grid">
+            <div class="performance-genre-item"><span>Folk</span></div>
+            <div class="performance-genre-item"><span>Soul</span></div>
+            <div class="performance-genre-item"><span>Jazz</span></div>
+            <div class="performance-genre-item"><span>Classical</span></div>
+            <div class="performance-genre-item"><span>Opera</span></div>
+            <div class="performance-genre-item"><span>Metal</span></div>
+            <div class="performance-genre-item"><span>Religious</span></div>
+            <div class="performance-genre-item"><span>Disco</span></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!------------------------------------------------------------------------------------------>
+      <!-- GALLERY SECTION                                                                      -->
+      <!------------------------------------------------------------------------------------------>
+      <div class="section-container">
+
+        <div class="grid gallery-section">
+          <span class="section-header">
+            Videos
+          </span>
+          <div class="grid-content gallery-video-grid">
+            <object class="gallery-video-frame" data="https://instagram.com/p/3rhfbPutE_/embed"></object>
+          </div>
+        </div>
+
+        <div class="grid gallery-section">
+          <span class="section-header">
+            Listen
+          </span>
+          <div class="grid-content gallery-audio-grid">
+            <object class="gallery-audio-frame"
+              data="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/626299512&auto_play=false&show_user=true"></object>
+            <object class="gallery-audio-frame"
+              data="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/626299446&auto_play=false&show_user=true"></object>
+          </div>
+        </div>
+
+        <div class="grid gallery-section">
+          <span class="section-header">
+            Photos
+          </span>
+          <div class="grid-content gallery-album-container">
+            <iframe class="gallery-album-frame" src="https://albumizr.com/a/0q7V" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+
+
+      <!------------------------------------------------------------------------------------------>
+      <!-- CONTACT SECTION                                                                      -->
+      <!------------------------------------------------------------------------------------------>
+      <div class="section-container">
+
+        <div class="grid contact-section">
+          <span class="section-header">
+            Connect
+          </span>
+          <div class="section-text-accent">
+            <p>
+              Some words about why you might want to contact me and stuff which can go over a line break in mobile view
+              and a bit more so that it'll go over a line in desktop view because it's really really
+              really really long
+            </p>
+          </div>
+          <div class="grid-content contact-grid">
+            <a href="https://soundcloud.com/user-267294782" class="contact-item">
+              <div class="contact-item-icon">
+                <img class="contact-item-icon-image" src="{{ site.baseurl }}/assets/icons/social-1_logo-soundcloud.svg"></img>
+              </div>
+              <div class="contact-item-text">
+                Esther Rowena Louise
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/esther_rowenalouisemusic" class="contact-item">
+              <div class="contact-item-icon">
+                <img class="contact-item-icon-image" src="{{ site.baseurl }}/assets/icons/social-1_logo-instagram.svg";"></img>
+              </div>
+              <div class="contact-item-text">
+                esther_rowenalouisemusic
+              </div>
+            </a>
+
+            <a href="https://www.facebook.com/esther.rowenalouisemusic" class="contact-item">
+              <div class="contact-item-icon">
+                <img class="contact-item-icon-image" src="{{ site.baseurl }}/assets/icons/social-1_logo-facebook.svg"></img>
+              </div>
+              <div class="contact-item-text">
+                esther.rowenalouisemusic
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <div class="footer-container">
       <span>Website design &copy; 2019 <a href="https://www.linkedin.com/in/jack-robinson-771545150">Jack Robinson</a>;</span>
@@ -54,7 +210,7 @@
 
   </div>
 
-  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+  <script src="{{ site.baseurl }}/assets/script.js"></script>
 
 </body>
 </html>

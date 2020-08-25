@@ -6,9 +6,7 @@ collections:
     output: true
     permalink: /:name
 exclude:
-  - "Gemfile*"
-  - "README.txt"
-  - "redirects.json"
-  - "serve.sh"
-plugins:
-  - jekyll-redirect-from
+- "Gemfile*"
+- "README.txt"
+- "redirects.json"
+- "serve.sh"
